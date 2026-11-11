@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landhi Engineering Works (L.E.W) | Heavy-Duty Radiators & Leaf Springs</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Tailwind CSS (for quick utility helper styling alongside Bootstrap) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        steelDark: '#0a1118',
+                        steelNav: '#0f172a',
+                        copperAccent: '#d97706',
+                        copperBright: '#f59e0b',
+                        brassGold: '#eab308',
+                        darkCard: '#1e293b'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --bg-dark: #0a1118;
+            --bg-card: #152232;
+            --copper-main: #d97706;
+            --copper-light: #f59e0b;
+            --copper-glow: rgba(217, 119, 6, 0.4);
+            --brass-gold: #eab308;
+            --text-muted: #94a3b8;
+            --border-steel: rgba(255, 255, 255, 0.08);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6, .font-heading {
+            font-family: 'Chakra Petch', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a1118;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2a3a4e;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--copper-main);
+        }
+
+        /* Hero Canvas Background Pulse */
+        .industrial-grid-bg {
+            background-image: radial-gradient(rgba(217, 119, 6, 0.12) 1px, transparent 1px),
+                              radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+
+        .glow-copper {
+            box-shadow: 0 0 25px var(--copper-glow);
+        }
+
+        .border-copper {
+            border-color: rgba(217, 119, 6, 0.4) !important;
+        }
+
+        /* Modern Gradient Overlay Cards */
+        .industrial-card {
+            background: linear-gradient(145deg, #152232, #0d1724);
+            border: 1px solid var(--border-steel);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .industrial-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 3px; height: 100%;
+            background: transparent;
+            transition: background 0.3s ease;
+        }
+
+        .industrial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+            border-color: rgba(217, 119, 6, 0.5);
+        }
+
+        .industrial-card:hover::before {
+            background: var(--copper-main);
+        }
+
+        /* Navigation styling */
+        .nav-link-custom {
+            color: #cbd5e1;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            position: relative;
+            transition: color 0.3s ease;
+            font-family: 'Chakra Petch', sans-serif;
+            font-size: 0.95rem;
+        }
+
+        .nav-link-custom:hover, .nav-link-custom.active {
+            color: var(--copper-light);
+        }
+
+        .nav-link-custom::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            width: 0%;
+            height: 2px;
+            background: var(--copper-main);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link-custom.active::after, .nav-link-custom:hover::after {
+            width: 80%;
+        }
+
+        /* Glowing Pulse Badge */
+        .pulse-badge {
+            animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+        }
+
+        @keyframes pulse-ring {
+            0% { box-shadow: 0 0 0 0 rgba(217, 119, 6, 0.6); }
+            70% { box-shadow: 0 0 0 12px rgba(217, 119, 6, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(217, 119, 6, 0); }
+        }
+
+        /* Heat Animation Graphic Elements */
+        .heat-pipe {
+            stroke-dasharray: 100;
+            animation: dash 5s linear infinite;
+        }
+
+        @keyframes dash {
+            to {
+                stroke-dashoffset: -1000;
+            }
+        }
+
+        /* Toast Container fixed z-index */
+        #toastContainer {
+            z-index: 9999;
+        }
+
+        /* Section Transition */
+        .page-section {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+        }
+
+        .page-section.active-section {
+            display: block;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP INDUSTRIAL INFOBAR -->
+    <div class="bg-black/60 border-b border-white/10 text-xs py-2 hidden md:block">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center gap-4 text-slate-400">
+                <span><i class="fa-solid font-awesome-logo-full fa-industry text-amber-500 me-2"></i>Landhi Industrial Area, Sector 35, Karachi, Pakistan</span>
+                <span><i class="fa-solid fa-certificate text-amber-500 me-2"></i>ISO 9001:2015 Certified Manufacturing Plant</span>
+            </div>
+            <div class="d-flex gap-3 text-slate-400">
+                <a href="tel:+922135000000" class="hover:text-amber-500 transition"><i class="fa-solid fa-phone me-1 text-amber-500"></i> +92 (21) 3500-LEW1</a>
+                <a href="mailto:info@landhieng.com" class="hover:text-amber-500 transition"><i class="fa-solid fa-envelope me-1 text-amber-500"></i> sales@landhiengineering.com</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN NAVBAR -->
+    <nav class="navbar navbar-expand-lg sticky-top bg-slate-900/95 backdrop-blur border-b border-slate-800 py-3">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-3" href="#" onclick="navigateTo('home')">
+                <div class="w-12 h-12 bg-gradient-to-br from-amber-600 to-amber-800 rounded-lg flex items-center justify-content-center text-white font-bold text-xl shadow-lg border border-amber-400/30">
+                    LEW
+                </div>
+                <div>
+                    <span class="text-xl font-bold text-white tracking-wider block font-heading leading-tight">LANDHI ENGINEERING</span>
+                    <span class="text-xs text-amber-500 font-semibold tracking-widest uppercase block">Works (Pvt) Ltd.</span>
+                </div>
+            </a>
+
+            <button class="navbar-toggler text-white border-slate-700" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                <i class="fa-solid fa-bars text-amber-500 text-xl"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-menu ms-auto d-flex flex-column flex-lg-row align-items-lg-center gap-1 gap-lg-3 list-unstyled mb-0 mt-3 mt-lg-0">
+                    <li><a href="#home" class="nav-link-custom active" onclick="navigateTo('home')"><i class="fa-solid fa-house-chimney text-xs me-1"></i> HOME</a></li>
+                    <li><a href="#about" class="nav-link-custom" onclick="navigateTo('about')"><i class="fa-solid fa-building-user text-xs me-1"></i> ABOUT US</a></li>
+                    <li><a href="#products" class="nav-link-custom" onclick="navigateTo('products')"><i class="fa-solid fa-gears text-xs me-1"></i> PRODUCTS</a></li>
+                    <li><a href="#specs" class="nav-link-custom" onclick="navigateTo('specs')"><i class="fa-solid fa-calculator text-xs me-1"></i> TECH & CALCULATOR</a></li>
+                    <li><a href="#contact" class="nav-link-custom" onclick="navigateTo('contact')"><i class="fa-solid fa-envelope-open-text text-xs me-1"></i> CONTACT</a></li>
+                </ul>
+                <div class="ms-lg-4 mt-3 mt-lg-0">
+                    <button onclick="navigateTo('specs')" class="btn bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-lg px-4 py-2 text-sm uppercase tracking-wider flex items-center gap-2 transition shadow-lg shadow-amber-600/30">
+                        <i class="fa-solid fa-file-invoice"></i> Get Spec Quote
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT SPA PAGES CONTAINER -->
+    <main>
+
+        <!-- ================= PAGE 1: HOME ================= -->
+        <section id="home-page" class="page-section active-section">
+            <!-- HERO SECTION -->
+            <div class="relative bg-slate-950 industrial-grid-bg py-20 lg:py-28 overflow-hidden border-b border-slate-800">
+                <div class="absolute -top-40 -right-40 w-96 h-96 bg-amber-600/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="container relative z-10">
+                    <div class="row align-items-center gy-5">
+                        <div class="col-lg-7">
+                            <div class="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 rounded-full px-4 py-1.5 text-xs font-semibold text-amber-400 mb-4">
+                                <span class="w-2 h-2 rounded-full bg-amber-500 pulse-badge"></span>
+                                PAKISTAN'S PREMIER OEM MANUFACTURER
+                            </div>
+                            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+                                HEAVY-DUTY <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-600">COPPER BRASS RADIATORS</span> & LEAF SPRINGS
+                            </h1>
+                            <p class="text-slate-300 text-lg mb-8 max-w-2xl font-normal leading-relaxed">
+                                Engineered for extreme thermal loads and high-capacity suspension systems. Landhi Engineering Works provides precision-manufactured OEM cooling and suspension components for industrial gensets, heavy machinery, logistics fleets, and locomotive applications.
+                            </p>
+                            <div class="flex flex-wrap gap-4">
+                                <button onclick="navigateTo('products')" class="btn bg-amber-600 hover:bg-amber-700 text-white font-bold px-6 py-3 rounded-lg flex items-center gap-2 shadow-lg shadow-amber-600/30 uppercase text-sm tracking-wider">
+                                    <i class="fa-solid fa-boxes-stacked"></i> Explore Products
+                                </button>
+                                <button onclick="navigateTo('specs')" class="btn border border-slate-700 hover:border-amber-500 text-slate-200 hover:text-white px-6 py-3 rounded-lg flex items-center gap-2 uppercase text-sm tracking-wider transition bg-slate-900/60">
+                                    <i class="fa-solid fa-sliders"></i> Custom Configuration
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- HERO INTERACTIVE GRAPHIC / ANIMATED RADIATOR & SUSPENSION SYMBOL -->
+                        <div class="col-lg-5">
+                            <div class="relative bg-slate-900/80 rounded-2xl p-6 border border-slate-700/60 shadow-2xl backdrop-blur">
+                                <div class="flex items-center justify-between pb-4 border-b border-slate-800 mb-4">
+                                    <span class="text-xs text-amber-500 font-mono font-semibold uppercase"><i class="fa-solid fa-microchip me-1"></i> Thermal & Suspension Dynamics</span>
+                                    <span class="badge bg-amber-500/20 text-amber-400 border border-amber-500/30">100% Tested</span>
+                                </div>
+
+                                <!-- SVG Industrial Heat Exchanger & Leaf Spring Visual Animation -->
+                                <div class="w-full h-64 flex items-center justify-center bg-slate-950/70 rounded-xl relative p-4 overflow-hidden border border-slate-800">
+                                    <svg viewBox="0 0 400 240" class="w-full h-full">
+                                        <!-- Radiator Frame -->
+                                        <rect x="30" y="20" width="160" height="200" rx="8" fill="#0f172a" stroke="#d97706" stroke-width="3"/>
+                                        <!-- Fins & Tube Animation -->
+                                        <g stroke="#f59e0b" stroke-width="2" opacity="0.7">
+                                            <line x1="50" y1="40" x2="170" y2="40" class="heat-pipe" />
+                                            <line x1="50" y1="60" x2="170" y2="60" />
+                                            <line x1="50" y1="80" x2="170" y2="80" class="heat-pipe" />
+                                            <line x1="50" y1="100" x2="170" y2="100" />
+                                            <line x1="50" y1="120" x2="170" y2="120" class="heat-pipe" />
+                                            <line x1="50" y1="140" x2="170" y2="140" />
+                                            <line x1="50" y1="160" x2="170" y2="160" class="heat-pipe" />
+                                            <line x1="50" y1="180" x2="170" y2="180" />
+                                        </g>
+                                        <!-- Radiator Brass Header Tank -->
+                                        <path d="M 30,30 L 190,30 L 180,15 L 40,15 Z" fill="#eab308" opacity="0.8"/>
+                                        <text x="110" y="115" text-anchor="middle" fill="#ffffff" font-size="12" font-family="Chakra Petch" font-weight="bold">COPPER CORE</text>
+
+                                        <!-- Leaf Spring Stack Visual -->
+                                        <g transform="translate(210, 40)">
+                                            <path d="M 10,80 Q 90,130 170,80" fill="none" stroke="#64748b" stroke-width="8" stroke-linecap="round"/>
+                                            <path d="M 25,92 Q 90,135 155,92" fill="none" stroke="#d97706" stroke-width="7" stroke-linecap="round"/>
+                                            <path d="M 40,104 Q 90,138 140,104" fill="none" stroke="#94a3b8" stroke-width="6" stroke-linecap="round"/>
+                                            <path d="M 55,114 Q 90,140 125,114" fill="none" stroke="#eab308" stroke-width="5" stroke-linecap="round"/>
+                                            <!-- Center Bolt & U-Bolt Clamp -->
+                                            <rect x="83" y="90" width="14" height="40" fill="#cbd5e1" rx="2"/>
+                                            <text x="90" y="55" text-anchor="middle" fill="#ffffff" font-size="11" font-family="Chakra Petch" font-weight="bold">LEAF SPRING</text>
+                                        </g>
+                                    </svg>
+                                </div>
+
+                                <div class="grid grid-cols-2 gap-3 mt-4">
+                                    <div class="bg-slate-950 p-3 rounded-lg border border-slate-800 text-center">
+                                        <span class="block text-amber-500 font-bold text-lg font-heading">High Dissipation</span>
+                                        <span class="text-xs text-slate-400">Pure Electrolytic Copper</span>
+                                    </div>
+                                    <div class="bg-slate-950 p-3 rounded-lg border border-slate-800 text-center">
+                                        <span class="block text-amber-500 font-bold text-lg font-heading">High Yield Strength</span>
+                                        <span class="text-xs text-slate-400">SUP9 / SUP11 Spring Steel</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- METRICS COUNTER BAR -->
+            <div class="bg-slate-900 border-b border-slate-800 py-10">
+                <div class="container">
+                    <div class="row text-center gy-4">
+                        <div class="col-6 col-md-3">
+                            <div class="p-3">
+                                <i class="fa-solid fa-calendar-check text-amber-500 text-3xl mb-2"></i>
+                                <h3 class="text-3xl font-bold text-white font-heading">35+</h3>
+                                <p class="text-sm text-slate-400 uppercase tracking-wider mb-0">Years Industry Leadership</p>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="p-3">
+                                <i class="fa-solid fa-temperature-arrow-down text-amber-500 text-3xl mb-2"></i>
+                                <h3 class="text-3xl font-bold text-white font-heading">150,000+</h3>
+                                <p class="text-sm text-slate-400 uppercase tracking-wider mb-0">Radiator Units Deployed</p>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="p-3">
+                                <i class="fa-solid fa-truck-monster text-amber-500 text-3xl mb-2"></i>
+                                <h3 class="text-3xl font-bold text-white font-heading">600,000+</h3>
+                                <p class="text-sm text-slate-400 uppercase tracking-wider mb-0">Leaf Springs Manufactured</p>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="p-3">
+                                <i class="fa-solid fa-building-circle-check text-amber-500 text-3xl mb-2"></i>
+                                <h3 class="text-3xl font-bold text-white font-heading">250+</h3>
+                                <p class="text-sm text-slate-400 uppercase tracking-wider mb-0">Corporate OEM Clients</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CORE CATEGORIES HIGHLIGHT -->
+            <div class="py-20 bg-slate-950">
+                <div class="container">
+                    <div class="text-center max-w-2xl mx-auto mb-16">
+                        <h2 class="text-3xl font-bold text-white mb-3">CORE MANUFACTURING DIVISIONS</h2>
+                        <div class="w-16 h-1 bg-amber-500 mx-auto rounded mb-4"></div>
+                        <p class="text-slate-400">Landhi Engineering Works operates specialized metallurgical and thermal engineering divisions dedicated to heavy commercial transport and industrial power units.</p>
+                    </div>
+
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="industrial-card rounded-2xl p-8 h-full flex flex-col justify-between">
+                                <div>
+                                    <div class="w-16 h-16 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-500 text-2xl mb-6">
+                                        <i class="fa-solid fa-fan"></i>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-white mb-3">Copper & Brass Heat Exchangers</h3>
+                                    <p class="text-slate-300 mb-6 leading-relaxed">
+                                        Heavy-duty radiator cores, industrial power generator radiators, locomotive heat exchangers, and custom brass header tanks built to endure high ambient temperatures and aggressive chemical operational environments.
+                                    </p>
+                                    <ul class="text-sm text-slate-400 space-y-2 mb-6">
+                                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> High-Grade 99.9% Electrolytic Copper Fins</li>
+                                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Heavy Wall Lock-Seam & Seamless Brass Tubes</li>
+                                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Bolt-on & Soldered Tank Assemblies</li>
+                                    </ul>
+                                </div>
+                                <button onclick="navigateTo('products'); filterProducts('radiator');" class="btn bg-slate-800 hover:bg-amber-600 text-white font-semibold py-2.5 px-5 rounded-lg transition w-fit text-sm">
+                                    View Radiator Range <i class="fa-solid fa-arrow-right ms-2"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="industrial-card rounded-2xl p-8 h-full flex flex-col justify-between">
+                                <div>
+                                    <div class="w-16 h-16 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-500 text-2xl mb-6">
+                                        <i class="fa-solid fa-ring"></i>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-white mb-3">Heavy Duty Suspension Leaf Springs</h3>
+                                    <p class="text-slate-300 mb-6 leading-relaxed">
+                                        Precision heat-treated conventional and parabolic leaf spring assemblies designed for trucks, trailers, buses, military transport, and heavy mining vehicles with optimal fatigue endurance.
+                                    </p>
+                                    <ul class="text-sm text-slate-400 space-y-2 mb-6">
+                                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> High Stress SUP9 / SUP11 Alloy Spring Steel</li>
+                                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Shot-Peened surface treatment for fatigue life</li>
+                                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Multi-Leaf & Parabolic Spring Systems</li>
+                                    </ul>
+                                </div>
+                                <button onclick="navigateTo('products'); filterProducts('leafspring');" class="btn bg-slate-800 hover:bg-amber-600 text-white font-semibold py-2.5 px-5 rounded-lg transition w-fit text-sm">
+                                    View Leaf Spring Catalog <i class="fa-solid fa-arrow-right ms-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 2: ABOUT US ================= -->
+        <section id="about-page" class="page-section">
+            <div class="py-16 bg-slate-900 border-b border-slate-800">
+                <div class="container">
+                    <div class="max-w-3xl">
+                        <span class="text-amber-500 font-semibold font-mono text-sm tracking-wider uppercase">Pioneering Engineering</span>
+                        <h1 class="text-4xl font-bold text-white mt-1 mb-4">ABOUT LANDHI ENGINEERING WORKS</h1>
+                        <p class="text-slate-300 text-lg leading-relaxed">
+                            Established in the heart of Landhi Industrial Zone, Karachi, L.E.W has grown from a specialized metal fabrication shop into one of Pakistan's most respected OEM component suppliers for thermal management and suspension solutions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="py-16 bg-slate-950">
+                <div class="container">
+                    <div class="row align-items-center gy-5 mb-20">
+                        <div class="col-lg-6">
+                            <h2 class="text-2xl font-bold text-white mb-4">OUR METALLURGICAL & THERMAL LEGACY</h2>
+                            <p class="text-slate-300 mb-4 leading-relaxed">
+                                For over three decades, Landhi Engineering Works (L.E.W) has maintained an unyielding commitment to material purity and structural integrity. In high-demand thermal management systems, pure copper and brass remain unmatched in heat dissipation, repairability, and resistance to environmental stress compared to aluminum counterparts.
+                            </p>
+                            <p class="text-slate-400 mb-6 leading-relaxed">
+                                Simultaneously, our Spring Division utilizes state-of-the-art furnace heat treatment, precision eye-rolling machines, and automated shot-peening bays to manufacture suspension assemblies that withstand extreme load capacities across rough terrain.
+                            </p>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+                                    <h4 class="text-amber-500 font-bold mb-1">ISO 9001:2015</h4>
+                                    <p class="text-xs text-slate-400 mb-0">Certified Quality Management Systems across all production bays.</p>
+                                </div>
+                                <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+                                    <h4 class="text-amber-500 font-bold mb-1">100% Hydro-Tested</h4>
+                                    <p class="text-xs text-slate-400 mb-0">Every radiator core undergoes pressure testing up to 35 PSI.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="industrial-card p-6 rounded-2xl">
+                                <h3 class="text-lg font-bold text-white mb-4 border-b border-slate-800 pb-3 flex items-center justify-between">
+                                    <span>PLANT MACHINERY CAPABILITIES</span>
+                                    <i class="fa-solid fa-microchip text-amber-500"></i>
+                                </h3>
+                                <div class="space-y-4 text-sm">
+                                    <div class="flex items-start gap-3">
+                                        <div class="w-8 h-8 rounded bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0">01</div>
+                                        <div>
+                                            <h5 class="text-white font-semibold mb-1">Automatic Fin & Tube Assembly Mills</h5>
+                                            <p class="text-slate-400 text-xs">High-speed tube insert and solder baking ovens for uniform copper fin matrix density.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <div class="w-8 h-8 rounded bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0">02</div>
+                                        <div>
+                                            <h5 class="text-white font-semibold mb-1">Continuous Heat Treatment Furnaces</h5>
+                                            <p class="text-slate-400 text-xs">Computer-controlled oil quenching and tempering lines ensuring exact Rockwell hardness (HRC) for leaf springs.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <div class="w-8 h-8 rounded bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold flex-shrink-0">03</div>
+                                        <div>
+                                            <h5 class="text-white font-semibold mb-1">Shot-Peening & Fatigue Testing Rig</h5>
+                                            <p class="text-slate-400 text-xs">Automated surface peening for stress relief and dynamic load testing machines up to 50 Ton forces.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 3: PRODUCTS ================= -->
+        <section id="products-page" class="page-section">
+            <div class="py-16 bg-slate-900 border-b border-slate-800">
+                <div class="container">
+                    <div class="max-w-3xl">
+                        <span class="text-amber-500 font-semibold font-mono text-sm tracking-wider uppercase">Heavy Duty Catalog</span>
+                        <h1 class="text-4xl font-bold text-white mt-1 mb-3">HEAVY INDUSTRY PRODUCTS</h1>
+                        <p class="text-slate-300">Browse our range of high-performance copper/brass heat exchangers and heavy suspension assemblies.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="py-12 bg-slate-950">
+                <div class="container">
+                    <!-- FILTER TABS -->
+                    <div class="flex flex-wrap items-center gap-3 mb-10 pb-4 border-b border-slate-800">
+                        <button onclick="filterProducts('all')" id="btn-filter-all" class="product-filter-btn active bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-lg text-sm transition">All Products</button>
+                        <button onclick="filterProducts('radiator')" id="btn-filter-radiator" class="product-filter-btn bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold px-5 py-2.5 rounded-lg text-sm transition">Copper/Brass Radiators</button>
+                        <button onclick="filterProducts('leafspring')" id="btn-filter-leafspring" class="product-filter-btn bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold px-5 py-2.5 rounded-lg text-sm transition">Leaf Springs & Assemblies</button>
+                    </div>
+
+                    <!-- PRODUCTS GRID -->
+                    <div class="row g-4" id="products-grid">
+                        <!-- Product Item 1 -->
+                        <div class="col-md-6 col-lg-4 product-item radiator">
+                            <div class="industrial-card rounded-2xl p-6 h-full flex flex-col justify-between">
+                                <div>
+                                    <div class="w-full h-48 bg-slate-900 rounded-xl mb-4 overflow-hidden relative flex items-center justify-center border border-slate-800">
+                                        <i class="fa-solid fa-temperature-arrow-down text-6xl text-amber-500/40"></i>
+                                        <span class="absolute top-3 right-3 bg-amber-500/20 text-amber-400 border border-amber-500/30 text-xs px-2.5 py-1 rounded font-mono">Heat Exchanger</span>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-white mb-2">Industrial Generator Radiators</h3>
+                                    <p class="text-slate-400 text-sm mb-4">High CFM airflow heat exchangers for 250 KVA – 2500 KVA Diesel Gensets (Cummins, Perkins, Caterpillar replacement).</p>
+                                    <div class="bg-slate-900 p-3 rounded-lg text-xs space-y-1 text-slate-300 mb-4 font-mono">
+                                        <div><strong>Core Material:</strong> Copper Tube & Copper Fin</div>
+                                        <div><strong>Tanks:</strong> Cast Brass / Heavy Sheet Metal</div>
+                                        <div><strong>Pressure Limit:</strong> 25 PSI Working</div>
+                                    </div>
+                                </div>
+                                <button onclick="openQuoteModal('Industrial Genset Radiator')" class="btn bg-amber-600/20 hover:bg-amber-600 text-amber-400 hover:text-white border border-amber-500/40 w-full font-semibold py-2 rounded-lg text-sm transition">
+                                    Request Tech Spec
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Product Item 2 -->
+                        <div class="col-md-6 col-lg-4 product-item radiator">
+                            <div class="industrial-card rounded-2xl p-6 h-full flex flex-col justify-between">
+                                <div>
+                                    <div class="w-full h-48 bg-slate-900 rounded-xl mb-4 overflow-hidden relative flex items-center justify-center border border-slate-800">
+                                        <i class="fa-solid fa-truck-front text-6xl text-amber-500/40"></i>
+                                        <span class="absolute top-3 right-3 bg-amber-500/20 text-amber-400 border border-amber-500/30 text-xs px-2.5 py-1 rounded font-mono">Automotive</span>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-white mb-2">Heavy Truck & Bus Radiators</h3>
+                                    <p class="text-slate-400 text-sm mb-4">Reinforced copper/brass core assemblies built for Bedford, Hino, Isuzu, Master, and Nissan commercial transport trucks.</p>
+                                    <div class="bg-slate-900 p-3 rounded-lg text-xs space-y-1 text-slate-300 mb-4 font-mono">
+                                        <div><strong>Row Count:</strong> 3-Row & 4-Row Core</div>
+                                        <div><strong>Headers:</strong> Heavy Gauge Brass</div>
+                                        <div><strong>Coating:</strong> Anti-Corrosive Black Enamel</div>
+                                    </div>
+                                </div>
+                                <button onclick="openQuoteModal('Heavy Truck Radiator')" class="btn bg-amber-600/20 hover:bg-amber-600 text-amber-400 hover:text-white border border-amber-500/40 w-full font-semibold py-2 rounded-lg text-sm transition">
+                                    Request Tech Spec
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Product Item 3 -->
+                        <div class="col-md-6 col-lg-4 product-item radiator">
+                            <div class="industrial-card rounded-2xl p-6 h-full flex flex-col justify-between">
+                                <div>
+                                    <div class="w-full h-48 bg-slate-900 rounded-xl mb-4 overflow-hidden relative flex items-center justify-center border border-slate-800">
+                                        <i class="fa-solid fa-tractor text-6xl text-amber-500/40"></i>
+                                        <span class="absolute top-3 right-3 bg-amber-500/20 text-amber-400 border border-amber-500/30 text-xs px-2.5 py-1 rounded font-mono">Off-Highway</span>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-white mb-2">Earthmoving Equipment Cores</h3>
+                                    <p class="text-slate-400 text-sm mb-4">Vibration-resistant heavy solder core radiators designed for excavators, bulldozers, and mining dumpers.</p>
+                                    <div class="bg-slate-900 p-3 rounded-lg text-xs space-y-1 text-slate-300 mb-4 font-mono">
+                                        <div><strong>Features:</strong> Steel Side Plates, Solder Coated</div>
+                                        <div><strong>Fin Pitch:</strong> 8-12 Fins Per Inch (Clog Free)</div>
+                                        <div><strong>Vibration Grade:</strong> ISO Heavy Shock Rated</div>
+                                    </div>
+                                </div>
+                                <button onclick="openQuoteModal('Earthmoving Machinery Radiator')" class="btn bg-amber-600/20 hover:bg-amber-600 text-amber-400 hover:text-white border border-amber-500/40 w-full font-semibold py-2 rounded-lg text-sm transition">
+                                    Request Tech Spec
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Product Item 4 -->
+                        <div class="col-md-6 col-lg-4 product-item leafspring">
+                            <div class="industrial-card rounded-2xl p-6 h-full flex flex-col justify-between">
+                                <div>
+                                    <div class="w-full h-48 bg-slate-900 rounded-xl mb-4 overflow-hidden relative flex items-center justify-center border border-slate-800">
+                                        <i class="fa-solid fa-trailer text-6xl text-amber-500/40"></i>
+                                        <span class="absolute top-3 right-3 bg-amber-500/20 text-amber-400 border border-amber-500/30 text-xs px-2.5 py-1 rounded font-mono">Suspension</span>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-white mb-2">Multi-Leaf Spring Assemblies</h3>
+                                    <p class="text-slate-400 text-sm mb-4">Heavy-duty multi-leaf main and helper spring packs designed for 10-Ton to 50-Ton payload transport trucks and trailers.</p>
+                                    <div class="bg-slate-900 p-3 rounded-lg text-xs space-y-1 text-slate-300 mb-4 font-mono">
+                                        <div><strong>Steel Grade:</strong> SUP9 / 55Cr3 Alloy</div>
+                                        <div><strong>Thickness:</strong> 8mm to 22mm</div>
+                                        <div><strong>Eye Bushing:</strong> Bronze / Rubber Sleeved</div>
+                                    </div>
+                                </div>
+                                <button onclick="openQuoteModal('Multi-Leaf Spring Pack')" class="btn bg-amber-600/20 hover:bg-amber-600 text-amber-400 hover:text-white border border-amber-500/40 w-full font-semibold py-2 rounded-lg text-sm transition">
+                                    Request Tech Spec
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Product Item 5 -->
+                        <div class="col-md-6 col-lg-4 product-item leafspring">
+                            <div class="industrial-card rounded-2xl p-6 h-full flex flex-col justify-between">
+                                <div>
+                                    <div class="w-full h-48 bg-slate-900 rounded-xl mb-4 overflow-hidden relative flex items-center justify-center border border-slate-800">
+                                        <i class="fa-solid fa-truck-field text-6xl text-amber-500/40"></i>
+                                        <span class="absolute top-3 right-3 bg-amber-500/20 text-amber-400 border border-amber-500/30 text-xs px-2.5 py-1 rounded font-mono">Parabolic</span>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-white mb-2">Parabolic Leaf Springs</h3>
+                                    <p class="text-slate-400 text-sm mb-4">Taper-rolled parabolic leaf springs providing optimized weight reduction and superior ride comfort for modern trucks & trailers.</p>
+                                    <div class="bg-slate-900 p-3 rounded-lg text-xs space-y-1 text-slate-300 mb-4 font-mono">
+                                        <div><strong>Steel Grade:</strong> SUP11 / 51CrV4 High Tensile</div>
+                                        <div><strong>Benefits:</strong> Inter-leaf Friction Reduction</div>
+                                        <div><strong>Surface:</strong> Full Shot Peened & Zinc Coated</div>
+                                    </div>
+                                </div>
+                                <button onclick="openQuoteModal('Parabolic Leaf Spring')" class="btn bg-amber-600/20 hover:bg-amber-600 text-amber-400 hover:text-white border border-amber-500/40 w-full font-semibold py-2 rounded-lg text-sm transition">
+                                    Request Tech Spec
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Product Item 6 -->
+                        <div class="col-md-6 col-lg-4 product-item leafspring">
+                            <div class="industrial-card rounded-2xl p-6 h-full flex flex-col justify-between">
+                                <div>
+                                    <div class="w-full h-48 bg-slate-900 rounded-xl mb-4 overflow-hidden relative flex items-center justify-center border border-slate-800">
+                                        <i class="fa-solid fa-layer-group text-6xl text-amber-500/40"></i>
+                                        <span class="absolute top-3 right-3 bg-amber-500/20 text-amber-400 border border-amber-500/30 text-xs px-2.5 py-1 rounded font-mono">Custom Hardware</span>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-white mb-2">U-Bolts & Spring Pins</h3>
+                                    <p class="text-slate-400 text-sm mb-4">Forged high-tensile grade 8.8 and 10.9 U-bolts, center bolts, and shackle pins tailored for heavy spring mounting.</p>
+                                    <div class="bg-slate-900 p-3 rounded-lg text-xs space-y-1 text-slate-300 mb-4 font-mono">
+                                        <div><strong>Grade:</strong> Class 10.9 High Tensile Steel</div>
+                                        <div><strong>Threads:</strong> Cold Rolled Precision Pitch</div>
+                                        <div><strong>Protection:</strong> Black Oxide / Zinc Plated</div>
+                                    </div>
+                                </div>
+                                <button onclick="openQuoteModal('U-Bolts & Suspension Pins')" class="btn bg-amber-600/20 hover:bg-amber-600 text-amber-400 hover:text-white border border-amber-500/40 w-full font-semibold py-2 rounded-lg text-sm transition">
+                                    Request Tech Spec
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 4: TECH & CALCULATOR ================= -->
+        <section id="specs-page" class="page-section">
+            <div class="py-16 bg-slate-900 border-b border-slate-800">
+                <div class="container">
+                    <div class="max-w-3xl">
+                        <span class="text-amber-500 font-semibold font-mono text-sm tracking-wider uppercase">Interactive Engineering Tools</span>
+                        <h1 class="text-4xl font-bold text-white mt-1 mb-3">TECHNICAL SPECS & CALCULATORS</h1>
+                        <p class="text-slate-300">Calculate custom radiator cooling capacities and estimated leaf spring load dimensions for your fleet or industrial engine setup.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="py-16 bg-slate-950">
+                <div class="container">
+                    <div class="row g-5">
+                        <!-- RADIATOR CORE SIZING CALCULATOR -->
+                        <div class="col-lg-6">
+                            <div class="industrial-card rounded-2xl p-6 sm:p-8 h-full">
+                                <div class="flex items-center gap-3 mb-6 pb-4 border-b border-slate-800">
+                                    <div class="w-12 h-12 rounded-lg bg-amber-500/20 text-amber-500 flex items-center justify-center text-xl">
+                                        <i class="fa-solid fa-calculator"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold text-white mb-0">Radiator Core Spec Calculator</h3>
+                                        <span class="text-xs text-slate-400">Estimate core heat dissipation surface area</span>
+                                    </div>
+                                </div>
+
+                                <form id="radiatorCalcForm" oninput="calculateRadiatorSpec()">
+                                    <div class="mb-4">
+                                        <label class="form-label text-sm text-slate-300">Engine Power Output (HP / KVA)</label>
+                                        <input type="number" id="radPower" class="form-control bg-slate-900 border-slate-700 text-white focus:border-amber-500" value="500" min="50" max="3000">
+                                    </div>
+                                    <div class="row g-3 mb-4">
+                                        <div class="col-6">
+                                            <label class="form-label text-sm text-slate-300">Core Height (Inches)</label>
+                                            <input type="number" id="radHeight" class="form-control bg-slate-900 border-slate-700 text-white focus:border-amber-500" value="36">
+                                        </div>
+                                        <div class="col-6">
+                                            <label class="form-label text-sm text-slate-300">Core Width (Inches)</label>
+                                            <input type="number" id="radWidth" class="form-control bg-slate-900 border-slate-700 text-white focus:border-amber-500" value="30">
+                                        </div>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="form-label text-sm text-slate-300">Tube Row Configuration</label>
+                                        <select id="radRows" class="form-select bg-slate-900 border-slate-700 text-white focus:border-amber-500">
+                                            <option value="3">3-Row Heavy Duty (Standard Truck)</option>
+                                            <option value="4" selected>4-Row Super Heavy (Genset/Machinery)</option>
+                                            <option value="5">5-Row High Heat Tropical Core</option>
+                                        </select>
+                                    </div>
+                                </form>
+
+                                <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 mt-6">
+                                    <h4 class="text-xs text-amber-500 uppercase font-mono mb-3">Estimated Engineering Output</h4>
+                                    <div class="grid grid-cols-2 gap-3">
+                                        <div>
+                                            <span class="text-xs text-slate-400 block">Calculated Face Area:</span>
+                                            <span id="resFaceArea" class="text-lg font-bold text-white font-mono">7.50 Sq. Ft</span>
+                                        </div>
+                                        <div>
+                                            <span class="text-xs text-slate-400 block">Recommended Heat Rating:</span>
+                                            <span id="resHeatRating" class="text-lg font-bold text-amber-400 font-mono">~450 kW Heat Rejection</span>
+                                        </div>
+                                    </div>
+                                    <button onclick="requestCalculatedQuote('Radiator')" class="btn bg-amber-600 hover:bg-amber-700 text-white w-full mt-4 font-semibold text-sm py-2 rounded-lg transition">
+                                        Send This Spec To LEW Engineers
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- LEAF SPRING LOAD CALCULATOR -->
+                        <div class="col-lg-6">
+                            <div class="industrial-card rounded-2xl p-6 sm:p-8 h-full">
+                                <div class="flex items-center gap-3 mb-6 pb-4 border-b border-slate-800">
+                                    <div class="w-12 h-12 rounded-lg bg-amber-500/20 text-amber-500 flex items-center justify-center text-xl">
+                                        <i class="fa-solid fa-scale-balanced"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold text-white mb-0">Leaf Spring Payload Estimator</h3>
+                                        <span class="text-xs text-slate-400">Determine recommended leaf pack thickness</span>
+                                    </div>
+                                </div>
+
+                                <form id="springCalcForm" oninput="calculateSpringSpec()">
+                                    <div class="mb-4">
+                                        <label class="form-label text-sm text-slate-300">Target Axle Load Capacity (Tons)</label>
+                                        <input type="number" id="springPayload" class="form-control bg-slate-900 border-slate-700 text-white focus:border-amber-500" value="16" min="2" max="60">
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="form-label text-sm text-slate-300">Application Type</label>
+                                        <select id="springApp" class="form-select bg-slate-900 border-slate-700 text-white focus:border-amber-500">
+                                            <option value="truck">Commercial Rear Axle Truck</option>
+                                            <option value="trailer">Heavy Commercial Multi-Axle Trailer</option>
+                                            <option value="bus">Passenger Bus (Smooth Spring Flex)</option>
+                                            <option value="dumper">Off-Road Mining Dumper (Extra Load)</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="form-label text-sm text-slate-300">Main Spring Eye-to-Eye Length (mm)</label>
+                                        <input type="number" id="springLength" class="form-control bg-slate-900 border-slate-700 text-white focus:border-amber-500" value="1300">
+                                    </div>
+                                </form>
+
+                                <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 mt-6">
+                                    <h4 class="text-xs text-amber-500 uppercase font-mono mb-3">Recommended Suspension Setup</h4>
+                                    <div class="grid grid-cols-2 gap-3">
+                                        <div>
+                                            <span class="text-xs text-slate-400 block">Leaf Quantity & Thickness:</span>
+                                            <span id="resLeafPack" class="text-lg font-bold text-white font-mono">10 Leaves x 12mm</span>
+                                        </div>
+                                        <div>
+                                            <span class="text-xs text-slate-400 block">Recommended Alloy:</span>
+                                            <span id="resSteelGrade" class="text-lg font-bold text-amber-400 font-mono">SUP9 Alloy Steel</span>
+                                        </div>
+                                    </div>
+                                    <button onclick="requestCalculatedQuote('LeafSpring')" class="btn bg-amber-600 hover:bg-amber-700 text-white w-full mt-4 font-semibold text-sm py-2 rounded-lg transition">
+                                        Request Leaf Spring Design Quote
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 5: CONTACT US ================= -->
+        <section id="contact-page" class="page-section">
+            <div class="py-16 bg-slate-900 border-b border-slate-800">
+                <div class="container">
+                    <div class="max-w-3xl">
+                        <span class="text-amber-500 font-semibold font-mono text-sm tracking-wider uppercase">Direct Industrial Inquiries</span>
+                        <h1 class="text-4xl font-bold text-white mt-1 mb-3">CONTACT LANDHI ENGINEERING WORKS</h1>
+                        <p class="text-slate-300">Connect with our engineering team for corporate procurement, OEM contracts, or customized fabrication inquiries.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="py-16 bg-slate-950">
+                <div class="container">
+                    <div class="row g-5">
+                        <!-- Contact Form -->
+                        <div class="col-lg-7">
+                            <div class="industrial-card rounded-2xl p-6 sm:p-8">
+                                <h3 class="text-2xl font-bold text-white mb-6">Send Engineering Inquiry</h3>
+                                <form id="contactForm" onsubmit="handleFormSubmit(event)">
+                                    <div class="row g-3 mb-4">
+                                        <div class="col-md-6">
+                                            <label class="form-label text-sm text-slate-300">Full Name *</label>
+                                            <input type="text" required id="contactName" class="form-control bg-slate-900 border-slate-700 text-white focus:border-amber-500" placeholder="e.g. Tariq Mehmood">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label text-sm text-slate-300">Company / Organization *</label>
+                                            <input type="text" required id="contactCompany" class="form-control bg-slate-900 border-slate-700 text-white focus:border-amber-500" placeholder="Company Name">
+                                        </div>
+                                    </div>
+
+                                    <div class="row g-3 mb-4">
+                                        <div class="col-md-6">
+                                            <label class="form-label text-sm text-slate-300">Email Address *</label>
+                                            <input type="email" required id="contactEmail" class="form-control bg-slate-900 border-slate-700 text-white focus:border-amber-500" placeholder="name@company.com">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label text-sm text-slate-300">Phone / WhatsApp *</label>
+                                            <input type="tel" required id="contactPhone" class="form-control bg-slate-900 border-slate-700 text-white focus:border-amber-500" placeholder="+92 300 1234567">
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-4">
+                                        <label class="form-label text-sm text-slate-300">Product Division *</label>
+                                        <select id="contactProduct" class="form-select bg-slate-900 border-slate-700 text-white focus:border-amber-500">
+                                            <option value="Copper Brass Radiators">Copper & Brass Radiators / Cores</option>
+                                            <option value="Heavy Duty Leaf Springs">Heavy Duty Leaf Springs & Assemblies</option>
+                                            <option value="Both Divisions">Both Divisions / OEM Contract</option>
+                                            <option value="Custom Machining">Custom Fabrication & Metallurgical Services</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="mb-6">
+                                        <label class="form-label text-sm text-slate-300">Technical Requirements / Message *</label>
+                                        <textarea required id="contactMessage" rows="4" class="form-control bg-slate-900 border-slate-700 text-white focus:border-amber-500" placeholder="Provide dimensions, part numbers, engine models, or fleet quantity..."></textarea>
+                                    </div>
+
+                                    <button type="submit" class="btn bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg shadow-amber-600/30 uppercase tracking-wider text-sm transition flex items-center gap-2">
+                                        <i class="fa-solid fa-paper-plane"></i> Submit Official Inquiry
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- Location & Plant Info -->
+                        <div class="col-lg-5">
+                            <div class="industrial-card rounded-2xl p-6 sm:p-8 mb-6">
+                                <h3 class="text-xl font-bold text-white mb-4 border-b border-slate-800 pb-3">PLANT HEADQUARTERS</h3>
+                                <div class="space-y-4 text-slate-300 text-sm">
+                                    <div class="flex items-start gap-3">
+                                        <i class="fa-solid fa-location-dot text-amber-500 text-lg mt-1"></i>
+                                        <div>
+                                            <strong class="text-white block">Factory & Works:</strong>
+                                            Plot 42/A, Main Industrial Highway, Landhi Industrial Area, Sector 35, Karachi, Pakistan.
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <i class="fa-solid fa-phone text-amber-500 text-lg mt-1"></i>
+                                        <div>
+                                            <strong class="text-white block">Direct Sales Desk:</strong>
+                                            +92 (21) 3500-LEW1 / +92 300 8200000
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <i class="fa-solid fa-envelope text-amber-500 text-lg mt-1"></i>
+                                        <div>
+                                            <strong class="text-white block">Email Enquiries:</strong>
+                                            sales@landhiengineering.com
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <i class="fa-solid fa-clock text-amber-500 text-lg mt-1"></i>
+                                        <div>
+                                            <strong class="text-white block">Operating Hours:</strong>
+                                            Monday – Saturday: 08:00 AM – 06:00 PM PKT
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- SIMULATED INDUSTRIAL MAP GRAPHIC -->
+                            <div class="industrial-card rounded-2xl p-4 text-center">
+                                <div class="w-full h-48 bg-slate-900 rounded-xl relative overflow-hidden flex items-center justify-center border border-slate-800">
+                                    <div class="absolute inset-0 opacity-30 industrial-grid-bg"></div>
+                                    <div class="relative z-10">
+                                        <i class="fa-solid fa-industry text-5xl text-amber-500 mb-2"></i>
+                                        <h4 class="text-white font-bold mb-0">Landhi Industrial Zone</h4>
+                                        <span class="text-xs text-amber-400 font-mono">24.8341° N, 67.1983° E</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 border-t border-slate-800 py-12">
+        <div class="container">
+            <div class="row g-4 mb-8">
+                <div class="col-lg-4">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <div class="w-10 h-10 bg-gradient-to-br from-amber-600 to-amber-800 rounded flex items-center justify-center text-white font-bold font-heading">
+                            LEW
+                        </div>
+                        <span class="text-lg font-bold text-white font-heading">LANDHI ENGINEERING WORKS</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                        Precision thermal management and heavy-duty suspension engineering. Manufacturing high-purity copper-brass radiators and high-yield alloy leaf springs for industrial, transport, and power generation sectors.
+                    </p>
+                    <div class="flex gap-3 text-slate-400">
+                        <a href="#" class="w-8 h-8 rounded bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-amber-500 hover:border-amber-500 transition"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="w-8 h-8 rounded bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-amber-500 hover:border-amber-500 transition"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-8 h-8 rounded bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-amber-500 hover:border-amber-500 transition"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-6 col-lg-2">
+                    <h5 class="text-white text-sm font-bold mb-3 font-heading">Navigation</h5>
+                    <ul class="list-unstyled text-xs space-y-2 text-slate-400">
+                        <li><a href="#home" onclick="navigateTo('home')" class="hover:text-amber-500 transition">Home</a></li>
+                        <li><a href="#about" onclick="navigateTo('about')" class="hover:text-amber-500 transition">About LEW</a></li>
+                        <li><a href="#products" onclick="navigateTo('products')" class="hover:text-amber-500 transition">Products Catalog</a></li>
+                        <li><a href="#specs" onclick="navigateTo('specs')" class="hover:text-amber-500 transition">Tech Calculator</a></li>
+                        <li><a href="#contact" onclick="navigateTo('contact')" class="hover:text-amber-500 transition">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-lg-3">
+                    <h5 class="text-white text-sm font-bold mb-3 font-heading">Product Divisions</h5>
+                    <ul class="list-unstyled text-xs space-y-2 text-slate-400">
+                        <li><a href="#products" onclick="navigateTo('products')" class="hover:text-amber-500 transition">Genset Heat Exchangers</a></li>
+                        <li><a href="#products" onclick="navigateTo('products')" class="hover:text-amber-500 transition">Heavy Truck Copper Radiators</a></li>
+                        <li><a href="#products" onclick="navigateTo('products')" class="hover:text-amber-500 transition">Multi-Leaf Assemblies</a></li>
+                        <li><a href="#products" onclick="navigateTo('products')" class="hover:text-amber-500 transition">Parabolic Leaf Springs</a></li>
+                        <li><a href="#products" onclick="navigateTo('products')" class="hover:text-amber-500 transition">Brass Header Tanks</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3">
+                    <h5 class="text-white text-sm font-bold mb-3 font-heading">ISO Certification</h5>
+                    <div class="p-3 bg-slate-900 rounded-lg border border-slate-800">
+                        <div class="flex items-center gap-2 text-amber-500 font-bold text-xs mb-1">
+                            <i class="fa-solid fa-award text-base"></i> ISO 9001:2015 CERTIFIED
+                        </div>
+                        <p class="text-xs text-slate-400 mb-0">Committed to rigorous metallurgical quality control, pressure safety margins, and exact OEM specifications.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-900 pt-6 text-center text-xs text-slate-500">
+                &copy; <span id="currentYear"></span> Landhi Engineering Works (L.E.W) (Pvt) Ltd. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE TOAST NOTIFICATION CONTAINER -->
+    <div id="toastContainer" class="position-fixed bottom-0 end-0 p-3">
+        <div id="actionToast" class="toast align-items-center text-white bg-amber-600 border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body flex-grow-1 flex items-center gap-2">
+                    <i class="fa-solid fa-circle-check text-lg"></i>
+                    <span id="toastMessage">Inquiry submitted successfully!</span>
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- CUSTOM SINGLE PAGE APPLICATION (SPA) ROUTING & INTERACTIVE SCRIPT -->
+    <script>
+        // Set dynamic current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // SPA Navigation Logic
+        function navigateTo(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page-section');
+            pages.forEach(page => {
+                page.classList.remove('active-section');
+            });
+
+            // Show selected page
+            const targetPage = document.getElementById(pageId + '-page');
+            if (targetPage) {
+                targetPage.classList.add('active-section');
+            }
+
+            // Update Nav Active state
+            const navLinks = document.querySelectorAll('.nav-link-custom');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + pageId) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Scroll smoothly back to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // Collapse mobile navbar menu if open
+            const navCollapse = document.getElementById('mainNavbar');
+            if (navCollapse && navCollapse.classList.contains('show')) {
+                const bsCollapse = new bootstrap.Collapse(navCollapse);
+                bsCollapse.hide();
+            }
+        }
+
+        // Handle direct URL hash on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            const hash = window.location.hash.replace('#', '');
+            if (hash && ['home', 'about', 'products', 'specs', 'contact'].includes(hash)) {
+                navigateTo(hash);
+            } else {
+                navigateTo('home');
+            }
+
+            // Initial Calculations
+            calculateRadiatorSpec();
+            calculateSpringSpec();
+        });
+
+        // Product Filtering Logic
+        function filterProducts(category) {
+            const items = document.querySelectorAll('.product-item');
+            const filterBtns = document.querySelectorAll('.product-filter-btn');
+
+            filterBtns.forEach(btn => {
+                btn.classList.remove('bg-amber-600', 'text-white');
+                btn.classList.add('bg-slate-800', 'text-slate-300');
+            });
+
+            const activeBtn = document.getElementById('btn-filter-' + category);
+            if (activeBtn) {
+                activeBtn.classList.remove('bg-slate-800', 'text-slate-300');
+                activeBtn.classList.add('bg-amber-600', 'text-white');
+            }
+
+            items.forEach(item => {
+                if (category === 'all') {
+                    item.style.display = 'block';
+                } else {
+                    if (item.classList.contains(category)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                }
+            });
+        }
+
+        // Radiator Engineering Calculator Logic
+        function calculateRadiatorSpec() {
+            const power = parseFloat(document.getElementById('radPower').value) || 0;
+            const height = parseFloat(document.getElementById('radHeight').value) || 0;
+            const width = parseFloat(document.getElementById('radWidth').value) || 0;
+            const rows = parseInt(document.getElementById('radRows').value) || 3;
+
+            const faceAreaSqFt = ((height * width) / 144).toFixed(2);
+            const heatRejectionKW = Math.round(power * 0.85 * (rows / 4));
+
+            document.getElementById('resFaceArea').textContent = faceAreaSqFt + " Sq. Ft";
+            document.getElementById('resHeatRating').textContent = "~" + heatRejectionKW + " kW Rejection";
+        }
+
+        // Leaf Spring Load Calculator Logic
+        function calculateSpringSpec() {
+            const payload = parseFloat(document.getElementById('springPayload').value) || 0;
+            const app = document.getElementById('springApp').value;
+
+            let leavesCount = 8;
+            let thickness = 10;
+            let steelGrade = "SUP9 Alloy Steel";
+
+            if (payload <= 8) {
+                leavesCount = 6;
+                thickness = 9;
+            } else if (payload <= 18) {
+                leavesCount = 10;
+                thickness = 12;
+            } else {
+                leavesCount = 14;
+                thickness = 16;
+                steelGrade = "SUP11 High Duty Alloy";
+            }
+
+            if (app === 'parabolic') {
+                steelGrade = "51CrV4 Taper Rolled Steel";
+                leavesCount = Math.max(3, Math.round(leavesCount / 3));
+                thickness = 20;
+            }
+
+            document.getElementById('resLeafPack').textContent = leavesCount + " Leaves x " + thickness + "mm";
+            document.getElementById('resSteelGrade').textContent = steelGrade;
+        }
+
+        // Open Spec Quote Prefilled Modal / Route
+        function openQuoteModal(productTitle) {
+            navigateTo('contact');
+            document.getElementById('contactMessage').value = "Inquiry for " + productTitle + ": Please provide technical datasheet and pricing details for OEM supply.";
+            showToast("Redirected to Inquiry Form for " + productTitle);
+        }
+
+        // Send Calculated Specs to Contact Form
+        function requestCalculatedQuote(type) {
+            navigateTo('contact');
+            if (type === 'Radiator') {
+                const area = document.getElementById('resFaceArea').textContent;
+                const heat = document.getElementById('resHeatRating').textContent;
+                document.getElementById('contactMessage').value = "Radiator Spec Request:\n- Face Area: " + area + "\n- Est. Heat Rating: " + heat + "\nPlease provide custom core quotation.";
+            } else {
+                const pack = document.getElementById('resLeafPack').textContent;
+                const grade = document.getElementById('resSteelGrade').textContent;
+                document.getElementById('contactMessage').value = "Leaf Spring Spec Request:\n- Leaf Pack: " + pack + "\n- Alloy Grade: " + grade + "\nPlease provide price & lead time quote.";
+            }
+            showToast("Calculated engineering specs transferred to inquiry form!");
+        }
+
+        // Form Submit Handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('contactName').value;
+            showToast("Thank you " + name + "! Your technical inquiry has been logged with LEW engineering team.");
+            document.getElementById('contactForm').reset();
+        }
+
+        // Custom Toast Message Function
+        function showToast(msg) {
+            document.getElementById('toastMessage').textContent = msg;
+            const toastEl = document.getElementById('actionToast');
+            const toast = new bootstrap.Toast(toastEl, { delay: 4000 });
+            toast.show();
+        }
+    </script>
+</body>
+</html>
